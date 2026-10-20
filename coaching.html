@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coaching | Transform Physiques Gym</title>
+  <meta name="description" content="Coaching at Transform Physiques Gym (TP Gym): coaches who know your name and your goals. See our members' transformations.">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <link rel="icon" href="images/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo logo-img" href="index.html"><img src="images/logo-header.png" alt="Transform Physiques Gym, home" width="240" height="240"></a>
+
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coaching.html" aria-current="page">Coaching</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="members.html">Our Members</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn" data-join href="#">Join now</a>
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-intro">
+      <div class="container">
+        <span class="eyebrow">Coaching</span>
+        <h1>Coaching</h1>
+
+        <!-- ✏️ COACHING INTRO — edit the text and the three options below -->
+        <p>We offer three ways to train with us:</p>
+
+        <div class="usp-grid coach-options">
+          <article class="usp">
+            <span class="usp-num">01</span>
+            <h3>Bespoke one-to-one premium coaching</h3>
+          </article>
+          <article class="usp">
+            <span class="usp-num">02</span>
+            <h3>One-to-one or small-group personal training</h3>
+          </article>
+          <article class="usp">
+            <span class="usp-num">03</span>
+            <h3>Affordable, low-cost training programmes</h3>
+          </article>
+        </div>
+
+        <p>For more information on any of these, tap 'Enquire about coaching' below and send us a message on Instagram.</p>
+        <!-- ✏️ END COACHING INTRO -->
+
+        <!-- Links to Instagram: set INSTAGRAM_URL in js/main.js -->
+        <a class="btn btn-lg intro-btn" data-instagram href="#">Enquire about coaching</a>
+      </div>
+    </section>
+
+    <!-- ===== TRANSFORMATIONS =====
+         Photos come from images/transformations/ (run scripts/process-photos.sh).
+         Separate photos are paired by name: "sarah-before.jpg" + "sarah-after.jpg".
+         Hidden automatically while the folder is empty. -->
+    <section class="section photo-section" id="transformations">
+      <div class="container">
+        <span class="eyebrow">Results</span>
+        <h2 class="section-title">Transformations</h2>
+        <div class="transform-grid" data-transformations="transformations" data-hide-when-empty="#transformations"></div>
+      </div>
+    </section>
+
+    <!-- ===== EVENTS =====
+         Photos come from images/events/ (run scripts/process-photos.sh).
+         Hidden automatically while the folder is empty. -->
+    <section class="section photo-section" id="events">
+      <div class="container">
+        <span class="eyebrow">Community</span>
+        <h2 class="section-title">Events</h2>
+        <div data-photos="events" data-alt="TP Gym event" data-hide-when-empty="#events"></div>
+      </div>
+    </section>
+
+    <!-- ===== ENQUIRE ===== -->
+    <section class="section cta-band">
+      <div class="container">
+        <h2>Talk to a coach.</h2>
+        <a class="btn btn-lg" data-instagram href="#">Enquire about coaching</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html">TP <span>GYM</span></a>
+          <p>Transform Physiques Gym. A gym for all abilities.</p>
+        </div>
+        <div>
+          <h4>Find us</h4>
+          <address><a data-maps href="#">Walney Rd, Barrow-in-Furness LA14&nbsp;5UT</a></address>
+        </div>
+        <div>
+          <h4>Opening hours</h4>
+          <p>Open 24/7 for members</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><a href="tel:+441229877892">01229 877892</a></li>
+            <li><a data-instagram href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> Transform Physiques Gym
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/photos-data.js"></script>
+  <script src="js/photos.js"></script>
+</body>
+</html>

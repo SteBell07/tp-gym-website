@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Members | Transform Physiques Gym</title>
+  <meta name="description" content="Meet the members of Transform Physiques Gym (TP Gym), the people who make it what it is.">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <link rel="icon" href="images/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo logo-img" href="index.html"><img src="images/logo-header.png" alt="Transform Physiques Gym, home" width="240" height="240"></a>
+
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="members.html" aria-current="page">Our Members</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn" data-join href="#">Join now</a>
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-intro">
+      <div class="container">
+        <span class="eyebrow">Members</span>
+        <h1>Our Members</h1>
+        <p>The people who make Transform Physiques what it is.</p>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="container">
+        <!-- MEMBER PHOTOS: filled automatically from images/members/
+             (run scripts/process-photos.sh). Shows "coming soon" while empty. -->
+        <div data-photos="members" data-alt="TP Gym member" data-empty-message="Member photos coming soon."></div>
+      </div>
+    </section>
+
+    <!-- ===== JOIN BAND ===== -->
+    <section class="section join-band">
+      <div class="container">
+        <h2>Ready to train?</h2>
+        <a class="btn btn-lg btn-dark" data-join href="#">Join now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html">TP <span>GYM</span></a>
+          <p>Transform Physiques Gym. A gym for all abilities.</p>
+        </div>
+        <div>
+          <h4>Find us</h4>
+          <address><a data-maps href="#">Walney Rd, Barrow-in-Furness LA14&nbsp;5UT</a></address>
+        </div>
+        <div>
+          <h4>Opening hours</h4>
+          <p>Open 24/7 for members</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><a href="tel:+441229877892">01229 877892</a></li>
+            <li><a data-instagram href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year">2026</span> Transform Physiques Gym
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/photos-data.js"></script>
+  <script src="js/photos.js"></script>
+</body>
+</html>
