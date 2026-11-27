@@ -20,6 +20,84 @@
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/terms.css">
+  <style>
+/* =========================================================
+   Simplified layout (key points + fold-away full documents)
+   ========================================================= */
+
+/* Internal review notes are for the owner, not customers */
+.review-note { display: none !important; }
+
+.terms-intro h1 { max-width: none; }
+
+.terms-keypoints { padding: 40px 0 48px; }
+.key-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  max-width: 70ch;
+}
+.key-points li {
+  position: relative;
+  padding-left: 30px;
+  line-height: 1.55;
+}
+.key-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--yellow);
+  font-weight: 900;
+}
+.key-points strong { color: var(--white); }
+
+/* Full documents fold away until tapped */
+.terms-doc { padding: 0; }
+.terms-fold > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 0;
+}
+.terms-fold > summary::-webkit-details-marker { display: none; }
+.terms-fold > summary h2 {
+  font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+  margin: 0;
+}
+.fold-hint {
+  flex-shrink: 0;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.fold-hint::after { content: " +"; }
+.terms-fold[open] .fold-hint::after { content: " −"; }
+.terms-fold[open] { padding-bottom: 40px; }
+.terms-fold > summary:hover h2 { color: var(--yellow); }
+
+.terms-contact {
+  padding: 32px 0 48px;
+  border-top: 1px solid var(--charcoal-2);
+}
+.terms-contact p { margin: 0 0 6px; }
+
+@media print {
+  .fold-hint { display: none; }
+  .terms-fold > summary { padding: 0 0 12px; }
+}
+
+.terms-doc > .container { max-width: var(--max); }
+.terms-fold > *:not(summary) { max-width: var(--doc-max); }
+  </style>
 </head>
 <!--
   ✏️ DOCUMENT STATUS
@@ -67,79 +145,52 @@
     <!-- ===== INTRO ===== -->
     <section class="page-intro terms-intro">
       <div class="container">
-        <span class="eyebrow">TP Fire &amp; Ice</span>
-        <h1>Membership Terms, Conditions &amp; Participant Agreement</h1>
-        <p>Please read all three documents on this page before you buy a TP Fire &amp; Ice founding membership. Ticking the box at checkout confirms that you have read, understood and agree to them.</p>
-
-        <dl class="doc-meta">
-          <div><dt>Document set</dt><dd>TPFI-TERMS</dd></div>
-          <div><dt>Version</dt><dd>1.0 <span class="ph">[DRAFT]</span></dd></div>
-          <div><dt>Effective date</dt><dd><span class="ph">[EFFECTIVE DATE: set on approval]</span></dd></div>
-          <div><dt>Last updated</dt><dd>27 November 2026</dd></div>
-        </dl>
+        <span class="eyebrow">TP Fire &amp; Ice founding membership</span>
+        <h1>Before you pay</h1>
+        <p>Here are the key points. The full terms are further down. Ticking the box at checkout means you have read and agree to them.</p>
       </div>
     </section>
 
-    <!-- ===== CONTENTS ===== -->
-    <section class="terms-contents" aria-labelledby="contents-title">
-      <div class="container">
-        <h2 id="contents-title" class="contents-title">Contents</h2>
-        <ol class="doc-cards">
-          <li>
-            <a class="doc-card" href="#membership-terms">
-              <span class="doc-num">Document 1</span>
-              <span class="doc-name">Membership Terms &amp; Conditions</span>
-              <span class="doc-desc">What you're buying, what you pay and when, session credits, bookings and cancellation.</span>
-            </a>
-          </li>
-          <li>
-            <a class="doc-card" href="#participant-waiver">
-              <span class="doc-num">Document 2</span>
-              <span class="doc-name">Participant Waiver &amp; Health Declaration</span>
-              <span class="doc-desc">The risks of heat, cold and compression therapy, and your health declaration.</span>
-            </a>
-          </li>
-          <li>
-            <a class="doc-card" href="#cold-bath-notice">
-              <span class="doc-num">Document 3</span>
-              <span class="doc-name">Cold Bath Safety Notice</span>
-              <span class="doc-desc">Who must not use the cold baths. You'll sign and date this in person before your first cold bath session.</span>
-            </a>
-          </li>
-        </ol>
-        <p class="contents-extra">Also on this page: <a href="#at-a-glance">Payments at a glance</a> · <a href="#acceptance">How you accept and what we record</a> · <a href="#version-history">Version history</a> · <a href="#contact">Contact us</a></p>
-      </div>
-    </section>
-
-    <!-- ===== AT A GLANCE ===== -->
+    <!-- ===== PAYMENT OPTIONS ===== -->
     <section class="terms-glance" id="at-a-glance" aria-labelledby="glance-title">
       <div class="container">
-        <h2 id="glance-title" class="glance-title">Payments at a glance</h2>
+        <h2 id="glance-title" class="glance-title">Choose how to pay</h2>
         <div class="glance-grid">
           <article class="glance-card">
             <span class="usp-num">Option 1</span>
-            <h3>Monthly payment</h3>
-            <p class="glance-price">12 × £35 <span>= £420 in total</span></p>
+            <h3>Monthly</h3>
+            <p class="glance-price">£35 a month <span>× 12 = £420</span></p>
             <ul>
-              <li>£35 at checkout <strong>pays for your first membership month</strong>. It is not a joining fee or an extra deposit.</li>
-              <li>The other 11 payments of £35 start when your <strong>second</strong> membership month begins, then continue monthly.</li>
-              <li>No second payment is taken during your first membership month.</li>
-              <li>Six 60-minute session credits each membership month.</li>
-              <li>Fixed 12-month agreement. It ends after the 12th payment; it is not a rolling subscription.</li>
+              <li>Your £35 today is your first month, not an extra fee.</li>
+              <li>The next £35 is taken when your second month starts.</li>
+              <li>Fixed 12 months. Payments stop after the 12th.</li>
             </ul>
           </article>
           <article class="glance-card">
             <span class="usp-num">Option 2</span>
             <h3>Pay in full</h3>
-            <p class="glance-price">£350 <span>once, for 12 months</span></p>
+            <p class="glance-price">£350 <span>once</span></p>
             <ul>
-              <li>One payment of £350 at checkout covers your whole 12-month membership.</li>
-              <li>No further membership payments.</li>
-              <li>Six 60-minute session credits each membership month (72 over the year).</li>
+              <li>Covers all 12 months.</li>
+              <li>Nothing more to pay.</li>
             </ul>
           </article>
         </div>
-        <p class="glance-note">Your 12 membership months only start when the facility opens and we confirm your membership start date. We will not charge you for any month before the facility is available to you.</p>
+      </div>
+    </section>
+
+    <!-- ===== KEY POINTS ===== -->
+    <section class="terms-keypoints" aria-labelledby="keypoints-title">
+      <div class="container">
+        <h2 id="keypoints-title" class="glance-title">Key points</h2>
+        <ul class="key-points">
+          <li><strong>6 sessions a month</strong> (60 minutes each). Unused sessions don&rsquo;t carry over.</li>
+          <li><strong>Your 12 months start when we open.</strong> We&rsquo;ll email you the start date. You won&rsquo;t pay for any month before then.</li>
+          <li><strong>Change your mind?</strong> Cancel within 14 days of paying for a full refund.</li>
+          <li><strong>For existing Transform Physiques gym members only.</strong> Limited to 50 places.</li>
+          <li><strong>Sauna, ice baths and compression carry health risks.</strong> If you have a heart, blood pressure or other medical condition, check with your GP first.</li>
+          <li><strong>Before your first ice bath</strong> you&rsquo;ll sign a safety form in person. Ice baths are 16+ and only with staff on site.</li>
+        </ul>
       </div>
     </section>
 
@@ -148,35 +199,12 @@
          ========================================================= -->
     <article class="terms-doc" id="membership-terms" aria-labelledby="doc1-title">
       <div class="container">
+        <details class="terms-fold">
+          <summary><h2 id="doc1-title">Full Membership Terms &amp; Conditions</h2><span class="fold-hint">Read</span></summary>
         <header class="doc-head">
-          <span class="doc-num">Document 1 of 3</span>
-          <h2 id="doc1-title">Membership Terms &amp; Conditions</h2>
           <p class="doc-ref">TPFI-TERMS v1.0 <span class="ph">[DRAFT]</span> · TP Fire &amp; Ice Founding Membership</p>
         </header>
 
-        <nav class="doc-toc" aria-label="Sections in Document 1">
-          <ol>
-            <li><a href="#t1">About these terms</a></li>
-            <li><a href="#t2">Who can join: the founding offer</a></li>
-            <li><a href="#t3">Membership options</a></li>
-            <li><a href="#t4">Monthly option: how your payments work</a></li>
-            <li><a href="#t5">Pay-in-full option</a></li>
-            <li><a href="#t6">Before the facility opens</a></li>
-            <li><a href="#t7">Your 14-day right to cancel</a></li>
-            <li><a href="#t8">Session credits and bookings</a></li>
-            <li><a href="#t9">Cancelling or missing a booked session</a></li>
-            <li><a href="#t10">Authority to collect future payments</a></li>
-            <li><a href="#t11">Failed, overdue and disputed payments</a></li>
-            <li><a href="#t12">Ending your membership early</a></li>
-            <li><a href="#t13">Facility rules and conduct</a></li>
-            <li><a href="#t14">Suspension and termination by us</a></li>
-            <li><a href="#t15">Changes to the facility and how we operate</a></li>
-            <li><a href="#t16">Our responsibility to you</a></li>
-            <li><a href="#t17">Your personal information</a></li>
-            <li><a href="#t18">Changes to these terms</a></li>
-            <li><a href="#t19">Complaints and the law that applies</a></li>
-          </ol>
-        </nav>
 
         <!-- 1 -->
         <section class="clause" id="t1">
@@ -441,6 +469,7 @@
           <p>19.1 If you are unhappy with anything, please contact us first at <span class="ph">[CONTACT EMAIL]</span> or on <a href="tel:+441229877892">01229 877892</a>. We will respond within <span class="ph">[X working days]</span>.</p>
           <p>19.2 These terms are governed by the law of England and Wales. You can bring legal proceedings in the courts of England and Wales. If you live in Scotland or Northern Ireland, you can also bring proceedings in your local courts.</p>
         </section>
+        </details>
       </div>
     </article>
 
@@ -449,9 +478,9 @@
          ========================================================= -->
     <article class="terms-doc doc-alt" id="participant-waiver" aria-labelledby="doc2-title">
       <div class="container">
+        <details class="terms-fold">
+          <summary><h2 id="doc2-title">Participant Waiver &amp; Health Declaration</h2><span class="fold-hint">Read</span></summary>
         <header class="doc-head">
-          <span class="doc-num">Document 2 of 3</span>
-          <h2 id="doc2-title">Participant Waiver &amp; Health Declaration</h2>
           <p class="doc-ref">TPFI-TERMS v1.0 <span class="ph">[DRAFT]</span> · Applies to every TP Fire &amp; Ice session</p>
           <div class="doc-actions no-print">
             <button class="btn btn-outline" type="button" data-print="participant-waiver">Print this document</button>
@@ -551,6 +580,7 @@
             <div class="sig-row"><span>Document version</span><span class="sig-fixed">TPFI-TERMS v1.0</span></div>
           </div>
         </section>
+        </details>
       </div>
     </article>
 
@@ -562,9 +592,9 @@
          ========================================================= -->
     <article class="terms-doc" id="cold-bath-notice" aria-labelledby="doc3-title">
       <div class="container">
+        <details class="terms-fold">
+          <summary><h2 id="doc3-title">Cold Bath Safety Notice</h2><span class="fold-hint">Read</span></summary>
         <header class="doc-head">
-          <span class="doc-num">Document 3 of 3</span>
-          <h2 id="doc3-title">Cold Bath Safety Notice</h2>
           <p class="doc-ref">TPFI-TERMS v1.0 <span class="ph">[DRAFT]</span> · Reflects insurer condition NBS913: Cold Bath Therapy Condition</p>
           <div class="doc-actions no-print">
             <button class="btn btn-outline" type="button" data-print="cold-bath-notice" data-print-mode="sign">Print for signature</button>
@@ -651,72 +681,15 @@
             </div>
           </section>
         </div>
+        </details>
       </div>
     </article>
 
-    <!-- ===== ACCEPTANCE & RECORDS ===== -->
-    <section class="terms-doc doc-alt" id="acceptance" aria-labelledby="acceptance-title">
-      <div class="container">
-        <header class="doc-head">
-          <span class="doc-num">How it works</span>
-          <h2 id="acceptance-title">How you accept, and what we record</h2>
-        </header>
-        <div class="steps">
-          <div class="step">
-            <span class="step-num">1</span>
-            <h3>At online checkout</h3>
-            <p>Before you can pay, you must tick a box confirming you have read and agree to all three documents on this page. If you choose the monthly option, the same box also confirms your authority for us to collect the remaining 11 payments of £35, starting from your second membership month.</p>
-            <p class="small">We record that you accepted, when, the version of these documents (TPFI-TERMS v1.0), and which option you bought.</p>
-          </div>
-          <div class="step">
-            <span class="step-num">2</span>
-            <h3>Before your first session</h3>
-            <p>You complete a short health questionnaire, held securely and separately from your payment details.</p>
-          </div>
-          <div class="step">
-            <span class="step-num">3</span>
-            <h3>Before your first cold bath</h3>
-            <p>A member of staff hands you the Cold Bath Safety Notice, shows you how to use the cold baths safely, and you sign and date the notice in person. We keep a copy for inspection. You cannot use the cold baths until this is done.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== VERSION HISTORY ===== -->
-    <section class="terms-doc" id="version-history" aria-labelledby="versions-title">
-      <div class="container">
-        <header class="doc-head">
-          <span class="doc-num">Records</span>
-          <h2 id="versions-title">Version history</h2>
-        </header>
-        <div class="table-wrap">
-          <table class="terms-table">
-            <thead><tr><th scope="col">Version</th><th scope="col">Effective date</th><th scope="col">Summary of changes</th></tr></thead>
-            <tbody>
-              <tr><td>1.0 <span class="ph">[DRAFT]</span></td><td><span class="ph">[On approval]</span></td><td>First version: founding membership terms, participant waiver &amp; health declaration, Cold Bath Safety Notice (insurer condition NBS913).</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="small">Earlier versions remain available on request, so that the terms you accepted can always be checked.</p>
-      </div>
-    </section>
-
     <!-- ===== CONTACT ===== -->
-    <section class="terms-doc doc-alt" id="contact" aria-labelledby="contact-title">
+    <section class="terms-contact" id="contact">
       <div class="container">
-        <header class="doc-head">
-          <span class="doc-num">Questions?</span>
-          <h2 id="contact-title">Contact us</h2>
-        </header>
-        <dl class="defs contact-defs">
-          <dt>Business</dt><dd><span class="ph">[REGISTERED COMPANY NAME]</span>, trading as Transform Physiques Gym / TP Fire &amp; Ice</dd>
-          <dt>Company number</dt><dd><span class="ph">[COMPANY NUMBER]</span></dd>
-          <dt>Registered office</dt><dd><span class="ph">[REGISTERED OFFICE ADDRESS]</span></dd>
-          <dt>Gym address</dt><dd>Walney Rd, Barrow-in-Furness LA14 5UT</dd>
-          <dt>Phone</dt><dd><a href="tel:+441229877892">01229 877892</a></dd>
-          <dt>Email</dt><dd><span class="ph">[CONTACT EMAIL]</span></dd>
-        </dl>
-        <p class="back-top no-print"><a href="#main">Back to top ↑</a></p>
+        <p><strong>Questions?</strong> Call us on <a href="tel:+441229877892">01229 877892</a> or ask at the gym.</p>
+        <p class="small">Version TPFI-TERMS v1.0 <span class="ph">[DRAFT]</span> &middot; Last updated 27 November 2026</p>
       </div>
     </section>
 
@@ -754,5 +727,18 @@
 
   <script src="js/main.js"></script>
   <script src="js/terms.js"></script>
+  <script>
+    // Open the folded documents when printing, then put them back
+    (function () {
+      var folds = document.querySelectorAll(".terms-fold"), was = [];
+      window.addEventListener("beforeprint", function () {
+        was = Array.prototype.map.call(folds, function (d) { return d.open; });
+        folds.forEach(function (d) { d.open = true; });
+      });
+      window.addEventListener("afterprint", function () {
+        folds.forEach(function (d, i) { d.open = !!was[i]; });
+      });
+    })();
+  </script>
 </body>
 </html>
