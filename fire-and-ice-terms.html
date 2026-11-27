@@ -7,10 +7,6 @@
   <meta name="description" content="TP Fire &amp; Ice founding membership terms and conditions, participant waiver and health declaration, and cold bath safety notice.">
   <meta name="theme-color" content="#0B0B0B">
 
-  <!-- ✏️ DRAFT: keep "noindex" while these documents are awaiting solicitor and insurer
-       review. Remove this line once version 1.0 is approved and published. -->
-  <meta name="robots" content="noindex">
-
   <link rel="icon" href="images/favicon-64.png" type="image/png">
   <link rel="apple-touch-icon" href="images/logo.png">
 
@@ -82,7 +78,6 @@
 .fold-hint::after { content: " +"; }
 .terms-fold[open] .fold-hint::after { content: " −"; }
 .terms-fold[open] { padding-bottom: 40px; }
-.terms-fold > summary:hover h2 { color: var(--yellow); }
 
 .terms-contact {
   padding: 32px 0 48px;
@@ -97,16 +92,43 @@
 
 .terms-doc > .container { max-width: var(--max); }
 .terms-fold > *:not(summary) { max-width: var(--doc-max); }
+
+/* Fire & Ice colours */
+.terms-page { --fire: #FF4A2E; --ice: #3FB6FF; }
+.fi-fire { color: var(--fire); }
+.fi-ice { color: var(--ice); }
+.fi-title { font-size: clamp(2.6rem, 9vw, 4.6rem); margin-bottom: 18px; }
+.fi-lead { color: var(--white); font-size: 1.12rem; max-width: 60ch; margin-bottom: 16px; }
+.terms-intro { position: relative; }
+.terms-intro::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
+  background: linear-gradient(90deg, var(--fire), var(--ice));
+}
+.terms-intro .eyebrow {
+  background: linear-gradient(90deg, var(--fire), var(--ice));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.card-fire { border-top: 4px solid var(--fire); }
+.card-ice { border-top: 4px solid var(--ice); }
+.card-fire .glance-price, .card-fire .usp-num { color: var(--fire); }
+.card-ice .glance-price, .card-ice .usp-num { color: var(--ice); }
+.key-points li:nth-child(odd)::before { color: var(--fire); }
+.key-points li:nth-child(even)::before { color: var(--ice); }
+.terms-docs-title { padding: 32px 0 4px; border-top: 1px solid var(--charcoal-2); }
+.terms-docs-title + .terms-doc { border-top: 0; }
+.terms-fold > summary h2 { transition: color .15s; }
+#membership-terms .terms-fold > summary:hover h2,
+#cold-bath-notice .terms-fold > summary:hover h2 { color: var(--ice); }
+#participant-waiver .terms-fold > summary:hover h2 { color: var(--fire); }
+.terms-fold > summary { border-left: 3px solid transparent; padding-left: 14px; margin-left: -17px; }
+#membership-terms .terms-fold > summary,
+#cold-bath-notice .terms-fold > summary { border-left-color: var(--ice); }
+#participant-waiver .terms-fold > summary { border-left-color: var(--fire); }
+.terms-contact { padding: 24px 0 40px; }
+@media print { .terms-intro::after { display: none; } }
   </style>
 </head>
-<!--
-  ✏️ DOCUMENT STATUS
-  data-doc-status="draft"  → shows the yellow "draft" banner and the "Review note" boxes.
-  data-doc-status="final"  → hides both. Only switch to "final" once the wording has been
-                             approved by your solicitor and (for the Cold Bath Safety Notice)
-                             your insurer, and every [PLACEHOLDER] has been filled in.
--->
-<body data-doc-status="draft">
+<body data-doc-status="final">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ===== HEADER ===== -->
@@ -135,19 +157,13 @@
 
   <main id="main" class="terms-page">
 
-    <!-- ===== DRAFT BANNER (hidden when data-doc-status="final") ===== -->
-    <div class="draft-banner" role="note">
-      <div class="container">
-        <strong>Draft for review.</strong> These documents have not yet been approved by a solicitor or by our insurer, and some details are still to be confirmed (shown in [square brackets]). They are not yet in force.
-      </div>
-    </div>
-
     <!-- ===== INTRO ===== -->
     <section class="page-intro terms-intro">
       <div class="container">
-        <span class="eyebrow">TP Fire &amp; Ice founding membership</span>
-        <h1>Before you pay</h1>
-        <p>Here are the key points. The full terms are further down. Ticking the box at checkout means you have read and agree to them.</p>
+        <span class="eyebrow">Founding membership</span>
+        <h1 class="fi-title">TP <span class="fi-fire">Fire</span> &amp; <span class="fi-ice">Ice</span></h1>
+        <p class="fi-lead">Recovery at Transform Physiques. Heat up in our traditional and infrared saunas, cool down in the ice baths, switch between the two with contrast therapy, and finish in the compression boots.</p>
+        <p>Please read the key points below before you pay. Ticking the box at checkout means you agree to the full terms at the bottom of this page.</p>
       </div>
     </section>
 
@@ -156,23 +172,23 @@
       <div class="container">
         <h2 id="glance-title" class="glance-title">Choose how to pay</h2>
         <div class="glance-grid">
-          <article class="glance-card">
+          <article class="glance-card card-fire">
             <span class="usp-num">Option 1</span>
             <h3>Monthly</h3>
-            <p class="glance-price">£35 a month <span>× 12 = £420</span></p>
+            <p class="glance-price">£35 <span>a month</span></p>
             <ul>
-              <li>Your £35 today is your first month, not an extra fee.</li>
-              <li>The next £35 is taken when your second month starts.</li>
-              <li>Fixed 12 months. Payments stop after the 12th.</li>
+              <li>Your £35 today is your first month.</li>
+              <li>Fixed price for 12 months.</li>
+              <li>After 12 months, cancel any time with 30 days&rsquo; notice.</li>
             </ul>
           </article>
-          <article class="glance-card">
+          <article class="glance-card card-ice">
             <span class="usp-num">Option 2</span>
             <h3>Pay in full</h3>
-            <p class="glance-price">£350 <span>once</span></p>
+            <p class="glance-price">£350 <span>for 12 months</span></p>
             <ul>
-              <li>Covers all 12 months.</li>
-              <li>Nothing more to pay.</li>
+              <li>One payment covers your first 12 months.</li>
+              <li>After 12 months, it continues at £35 a month. Cancel any time with 30 days&rsquo; notice.</li>
             </ul>
           </article>
         </div>
@@ -184,14 +200,17 @@
       <div class="container">
         <h2 id="keypoints-title" class="glance-title">Key points</h2>
         <ul class="key-points">
-          <li><strong>6 sessions a month</strong> (60 minutes each). Unused sessions don&rsquo;t carry over.</li>
-          <li><strong>Your 12 months start when we open.</strong> We&rsquo;ll email you the start date. You won&rsquo;t pay for any month before then.</li>
-          <li><strong>Change your mind?</strong> Cancel within 14 days of paying for a full refund.</li>
-          <li><strong>For existing Transform Physiques gym members only.</strong> Limited to 50 places.</li>
-          <li><strong>Sauna, ice baths and compression carry health risks.</strong> If you have a heart, blood pressure or other medical condition, check with your GP first.</li>
+          <li><strong>6 sessions a month</strong>, 60 minutes each. Unused sessions don&rsquo;t carry over.</li>
+          <li><strong>Your 12 months start when we open.</strong> We&rsquo;ll email you your start date. You won&rsquo;t pay for any month before then.</li>
+          <li><strong>For Transform Physiques gym members only.</strong> Limited to 50 founding places.</li>
+          <li><strong>Heat, cold and compression carry health risks.</strong> If you have a heart, blood pressure or other medical condition, check with your GP first.</li>
           <li><strong>Before your first ice bath</strong> you&rsquo;ll sign a safety form in person. Ice baths are 16+ and only with staff on site.</li>
         </ul>
       </div>
+    </section>
+
+    <section class="terms-docs-title">
+      <div class="container"><h2 class="glance-title">Full terms</h2></div>
     </section>
 
     <!-- =========================================================
@@ -200,274 +219,83 @@
     <article class="terms-doc" id="membership-terms" aria-labelledby="doc1-title">
       <div class="container">
         <details class="terms-fold">
-          <summary><h2 id="doc1-title">Full Membership Terms &amp; Conditions</h2><span class="fold-hint">Read</span></summary>
-        <header class="doc-head">
-          <p class="doc-ref">TPFI-TERMS v1.0 <span class="ph">[DRAFT]</span> · TP Fire &amp; Ice Founding Membership</p>
-        </header>
-
-
-        <!-- 1 -->
+          <summary><h2 id="doc1-title">Membership Terms &amp; Conditions</h2><span class="fold-hint">Read</span></summary>
         <section class="clause" id="t1">
           <h3><span class="clause-num">1.</span> About these terms</h3>
-          <p>1.1 These terms form the agreement between you and <span class="ph">[REGISTERED COMPANY NAME]</span>, trading as Transform Physiques Gym and TP Fire &amp; Ice ("<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>"), company number <span class="ph">[COMPANY NUMBER]</span>, registered office <span class="ph">[REGISTERED OFFICE ADDRESS]</span>.</p>
-          <p>1.2 They apply to the TP Fire &amp; Ice Founding Membership, which gives access to our recovery facility at <span class="ph">[FACILITY ADDRESS: confirm]</span> (the "<strong>Facility</strong>"), including traditional sauna, infrared sauna, cold water immersion (ice/cold baths), contrast therapy and compression boots.</p>
-          <p>1.3 Your agreement is made up of all three documents on this page: these Membership Terms &amp; Conditions, the <a href="#participant-waiver">Participant Waiver &amp; Health Declaration</a> and the <a href="#cold-bath-notice">Cold Bath Safety Notice</a>. TP Fire &amp; Ice membership is separate from, and in addition to, your Transform Physiques gym membership.</p>
-          <p>1.4 In these terms:</p>
-          <dl class="defs">
-            <dt>Checkout Date</dt>
-            <dd>The date you complete payment at our online checkout.</dd>
-            <dt>Commencement Date</dt>
-            <dd>The date your 12-month membership starts. It is set once the Facility is open, and we will tell you the date in writing (by email) before it begins.</dd>
-            <dt>Membership Month</dt>
-            <dd>Each one-month period of your membership. Membership Month 1 starts on the Commencement Date; each later Membership Month starts on the same day of the following calendar month (or the last day of that month if it is shorter).</dd>
-            <dt>Monthly Billing Date</dt>
-            <dd>For the monthly option, the first day of each Membership Month from Membership Month 2 to Membership Month 12.</dd>
-            <dt>Session Credit</dt>
-            <dd>An entitlement to book and attend one 60-minute session at the Facility.</dd>
-          </dl>
+          <p>These terms are the agreement between you and TP Fire &amp; Ice, part of Transform Physiques Gym, Walney Rd, Barrow-in-Furness LA14 5UT ("we", "us"). They cover the TP Fire &amp; Ice Founding Membership: traditional sauna, infrared sauna, ice baths, contrast therapy and compression boots.</p>
+          <p>Your agreement is made up of these terms, the <a href="#participant-waiver">Participant Waiver &amp; Health Declaration</a> and the <a href="#cold-bath-notice">Cold Bath Safety Notice</a>. TP Fire &amp; Ice is separate from your gym membership.</p>
         </section>
 
-        <!-- 2 -->
         <section class="clause" id="t2">
-          <h3><span class="clause-num">2.</span> Who can join: the founding offer</h3>
-          <p>2.1 The Black Friday Founding Membership is available only to existing members of Transform Physiques Gym. If we cannot confirm that you were a gym member when you bought it, we will cancel your founding membership and refund everything you paid in full.</p>
-          <p>2.2 It is limited to 50 founding memberships in total across both payment options. Once 50 have been sold, the offer closes. If a payment is accidentally accepted after the limit is reached, we will tell you and refund it in full.</p>
-          <p>2.3 You must be at least <span class="ph">[MINIMUM AGE: 18? see review note]</span> to buy a membership. Cold bath therapy is only available to people aged 16 and over (see Document 3).</p>
-          <aside class="review-note"><strong>Review note:</strong> Decide the minimum age for buying the membership. Under-18s have limited capacity to enter binding contracts, so 18+ is the simplest choice; if 16 and 17-year-olds are allowed, a parent or guardian should sign. The insurer requires 16+ for cold bath therapy.</aside>
-          <p>2.4 Your membership is personal to you. It cannot be transferred, shared or sold to anyone else.</p>
+          <h3><span class="clause-num">2.</span> Who can join</h3>
+          <p>The founding membership is for existing Transform Physiques gym members aged 18 or over, and is limited to 50 places. If we can&rsquo;t confirm you are a gym member, we will cancel it and refund you in full. Your membership is personal to you and can&rsquo;t be shared or transferred.</p>
         </section>
 
-        <!-- 3 -->
         <section class="clause" id="t3">
-          <h3><span class="clause-num">3.</span> Membership options</h3>
-          <div class="table-wrap">
-            <table class="terms-table">
-              <thead>
-                <tr><th scope="col"></th><th scope="col">Option 1: Monthly payment</th><th scope="col">Option 2: Pay in full</th></tr>
-              </thead>
-              <tbody>
-                <tr><th scope="row">Paid at checkout</th><td>£35 (pays for Membership Month 1)</td><td>£350 (pays for all 12 Membership Months)</td></tr>
-                <tr><th scope="row">Further payments</th><td>11 × £35, one at the start of each of Membership Months 2 to 12</td><td>None</td></tr>
-                <tr><th scope="row">Total cost</th><td>£420</td><td>£350</td></tr>
-                <tr><th scope="row">Term</th><td>12 Membership Months (fixed)</td><td>12 Membership Months</td></tr>
-                <tr><th scope="row">Session Credits</th><td>6 per Membership Month (72 in total)</td><td>6 per Membership Month (72 in total)</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p>3.1 Both options give exactly the same session entitlement. The only difference is how and when you pay.</p>
-          <p>3.2 All prices include VAT where applicable. <span class="ph">[Confirm VAT position]</span></p>
+          <h3><span class="clause-num">3.</span> Price and payment</h3>
+          <p><strong>Monthly:</strong> £35 a month. The £35 you pay at checkout is your first month. The next £35 is taken at the start of your second month, then monthly.</p>
+          <p><strong>Pay in full:</strong> £350 at checkout covers your first 12 months.</p>
+          <p>Your card details are saved securely by our payment provider, Stripe. By ticking the box at checkout you authorise us to take your future payments from that card. We never see your full card number.</p>
         </section>
 
-        <!-- 4 -->
         <section class="clause" id="t4">
-          <h3><span class="clause-num">4.</span> Monthly option: how your payments work</h3>
-          <div class="key-box">
-            <p class="key-title">Your £35 at checkout pays for your first month</p>
-            <p>The £35 you pay at checkout is the payment for <strong>Membership Month 1</strong>. It is <strong>not</strong> a joining fee, <strong>not</strong> a deposit on top of the membership price, and <strong>not</strong> an extra payment in addition to your 12 monthly payments. It is the first of your 12 payments.</p>
-          </div>
-          <p>4.1 You make 12 payments of £35, £420 in total:</p>
-          <div class="table-wrap">
-            <table class="terms-table schedule-table">
-              <thead>
-                <tr><th scope="col">Membership month</th><th scope="col">Payment</th><th scope="col">When it is taken</th><th scope="col">What it covers</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Month 1</td><td>£35</td><td>At checkout</td><td>First month and six session credits</td></tr>
-                <tr><td>Month 2</td><td>£35</td><td>Start of Month 2</td><td>Second month and six session credits</td></tr>
-                <tr><td>Month 3</td><td>£35</td><td>Start of Month 3</td><td>Third month and six session credits</td></tr>
-                <tr><td>Month 4</td><td>£35</td><td>Start of Month 4</td><td>Fourth month and six session credits</td></tr>
-                <tr><td>Month 5</td><td>£35</td><td>Start of Month 5</td><td>Fifth month and six session credits</td></tr>
-                <tr><td>Month 6</td><td>£35</td><td>Start of Month 6</td><td>Sixth month and six session credits</td></tr>
-                <tr><td>Month 7</td><td>£35</td><td>Start of Month 7</td><td>Seventh month and six session credits</td></tr>
-                <tr><td>Month 8</td><td>£35</td><td>Start of Month 8</td><td>Eighth month and six session credits</td></tr>
-                <tr><td>Month 9</td><td>£35</td><td>Start of Month 9</td><td>Ninth month and six session credits</td></tr>
-                <tr><td>Month 10</td><td>£35</td><td>Start of Month 10</td><td>Tenth month and six session credits</td></tr>
-                <tr><td>Month 11</td><td>£35</td><td>Start of Month 11</td><td>Eleventh month and six session credits</td></tr>
-                <tr><td>Month 12</td><td>£35</td><td>Start of Month 12</td><td>Twelfth month and six session credits</td></tr>
-              </tbody>
-              <tfoot>
-                <tr><th scope="row">Total</th><td colspan="3"><strong>12 payments of £35 = £420</strong></td></tr>
-              </tfoot>
-            </table>
-          </div>
-          <p>4.2 <strong>Three different dates matter:</strong></p>
-          <ul>
-            <li><strong>Checkout Date</strong>: when you pay the first £35. Because the Facility is not yet open, this will usually be before your membership starts.</li>
-            <li><strong>Commencement Date</strong>: when Membership Month 1 starts, once the Facility is open. Your £35 from checkout pays for this month.</li>
-            <li><strong>Monthly Billing Date</strong>: the start of each Membership Month from Month 2 onwards. This is when each of the remaining 11 payments is taken.</li>
-          </ul>
-          <p>4.3 <strong>No second payment is taken during Membership Month 1.</strong> Your second payment is not due until Membership Month 2 begins.</p>
-          <div class="example-box">
-            <p class="key-title">Example</p>
-            <p>You buy your membership on Black Friday and pay £35. The Facility opens later, and we confirm your Commencement Date as 1 March.</p>
-            <ul>
-              <li>The £35 you paid at checkout pays for March (Membership Month 1).</li>
-              <li>Nothing more is taken in March.</li>
-              <li>Your next £35 is taken on 1 April, when Membership Month 2 begins.</li>
-              <li>Further payments of £35 are taken on 1 May, 1 June and so on, with the final (12th) payment on 1 February the following year, covering Membership Month 12.</li>
-              <li>Your membership ends at the end of February the following year. No more payments are taken.</li>
-            </ul>
-            <p class="small">The dates above are only an example. We have not yet set an opening date.</p>
-          </div>
-          <p>4.4 This is a fixed 12-month agreement with a total commitment of £420. It is not an open-ended subscription: payments stop automatically after the 12th payment, and your membership ends at the end of Membership Month 12 unless you choose to renew on terms we offer at that time.</p>
-          <p>4.5 Your commitment to pay the full £420 is subject to your statutory rights (section 7), the opening provisions (section 6) and the early-ending provisions (section 12).</p>
+          <h3><span class="clause-num">4.</span> Minimum term and cancelling</h3>
+          <p>Your membership has a fixed minimum term of 12 months. After 12 months it continues at £35 a month until you cancel. To cancel, give 30 days&rsquo; notice through the ClubRight app.</p>
         </section>
 
-        <!-- 5 -->
         <section class="clause" id="t5">
-          <h3><span class="clause-num">5.</span> Pay-in-full option</h3>
-          <p>5.1 You pay £350 once, at checkout. This covers all 12 Membership Months of your membership, starting on the Commencement Date.</p>
-          <p>5.2 No further membership payments are due, and we do not set up any recurring payment for this option.</p>
-          <p>5.3 You receive six Session Credits in each of your 12 Membership Months (72 in total), on the same basis as the monthly option.</p>
+          <h3><span class="clause-num">5.</span> When your membership starts</h3>
+          <p>Your 12 months start when TP Fire &amp; Ice opens. We will email you your start date at least 14 days before. You won&rsquo;t be charged for any month before then.</p>
         </section>
 
-        <!-- 6 -->
         <section class="clause" id="t6">
-          <h3><span class="clause-num">6.</span> Before the facility opens</h3>
-          <p>6.1 The Facility is not yet open, and we have not yet fixed an opening date. Your checkout payment secures your founding membership and pays for Membership Month 1 (monthly option) or your whole membership (pay-in-full option) once the Facility opens.</p>
-          <p>6.2 Your 12 Membership Months do not start until the Facility is open and we have told you your Commencement Date by email. We will give you at least <span class="ph">[X days]</span> notice of your Commencement Date.</p>
-          <p>6.3 We will not charge you for any Membership Month before the Facility is available to you, and no further monthly payments are taken before your Commencement Date.</p>
-          <p>6.4 Any opening date we mention before the Commencement Date is confirmed is our best estimate, not a guarantee. If the expected opening date changes, we will let you know by email as soon as reasonably possible.</p>
-          <p>6.5 <strong>Delays.</strong> If the Facility has not opened by <span class="ph">[LONG-STOP DATE]</span>, you may cancel your membership by telling us, and we will refund everything you have paid us for it, in full.</p>
-          <p>6.6 <strong>If the Facility does not open.</strong> If we decide not to open the Facility, or it does not open, we will tell you and refund everything you have paid us for the membership, in full.</p>
-          <p>6.7 We will make refunds under this section to your original payment method within 14 days of the cancellation.</p>
-          <aside class="review-note"><strong>Review note (solicitor):</strong> 6.2 notice period, 6.5 long-stop date and 6.7 refund timing need your decision. Taking payment months before a service starts, and what happens on delay, should be reviewed by a solicitor. The wording above is deliberately customer-friendly.</aside>
+          <h3><span class="clause-num">6.</span> Sessions and bookings</h3>
+          <p>You get six 60-minute sessions each month. Book them in advance through the ClubRight app; times depend on availability. Unused sessions don&rsquo;t carry over to the next month and have no cash value.</p>
+          <p>If you can&rsquo;t make a session, cancel at least 12 hours before and you keep it. Later cancellations and no-shows use up the session.</p>
+          <p>Ice baths are only available while a trained member of staff is on site, and once you have signed the Cold Bath Safety Notice.</p>
         </section>
 
-        <!-- 7 -->
         <section class="clause" id="t7">
-          <h3><span class="clause-num">7.</span> Your 14-day right to cancel</h3>
-          <p>7.1 Because you buy online, you have a legal right to cancel within 14 days of the Checkout Date without giving a reason (the "cancellation period"), under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013.</p>
-          <p>7.2 To cancel, tell us clearly by email to <span class="ph">[CONTACT EMAIL]</span> or in writing to <span class="ph">[ADDRESS]</span>. You can use this wording if you like: "I wish to cancel my TP Fire &amp; Ice founding membership bought on [date]. Name: [name]. Email used at checkout: [email]."</p>
-          <p>7.3 If you cancel within the cancellation period, we will refund everything you have paid, to your original payment method, within 14 days of your telling us.</p>
-          <p>7.4 If you ask us to let you start using the Facility before the cancellation period ends and then cancel within it, we may deduct an amount proportionate to the service you have received up to the time you told us you were cancelling.</p>
-          <p>7.5 Nothing in these terms affects your legal rights as a consumer, including your rights under the Consumer Rights Act 2015.</p>
+          <h3><span class="clause-num">7.</span> Missed payments</h3>
+          <p>If a payment fails, we will let you know and try again. If it is still unpaid after 7 days, we may pause your bookings until it is paid. Any missed payment is still owed.</p>
         </section>
 
-        <!-- 8 -->
         <section class="clause" id="t8">
-          <h3><span class="clause-num">8.</span> Session credits and bookings</h3>
-          <p>8.1 You receive six Session Credits at the start of each Membership Month. Each Session Credit gives you one 60-minute session at the Facility.</p>
-          <p>8.2 Sessions must be booked in advance through <span class="ph">[BOOKING SYSTEM: e.g. ClubRight app]</span>. Bookings are subject to availability, and we cannot guarantee any particular time slot.</p>
-          <p>8.3 Unused Session Credits expire at the end of the Membership Month they belong to. They cannot be carried over to a later month.</p>
-          <p>8.4 Session Credits have no cash value. They cannot be exchanged for money, refunded or transferred to another person.</p>
-          <p>8.5 You must follow the Facility's booking, hygiene and conduct rules (section 13), which we display at the Facility and may update from time to time.</p>
-          <p>8.6 Cold bath therapy is only available while a trained member of staff is on the premises and after you have signed the Cold Bath Safety Notice in person (Document 3).</p>
+          <h3><span class="clause-num">8.</span> Facility rules</h3>
+          <p>To keep everyone safe and comfortable, you must:</p>
+          <ul>
+            <li>follow staff instructions and all safety signs;</li>
+            <li>use the saunas, ice baths and compression boots only as you have been shown;</li>
+            <li>never use an ice bath alone or without trained staff on site;</li>
+            <li>shower first, wear clean swimwear and sit on your own towel in the saunas;</li>
+            <li>not take part after drinking alcohol or taking drugs;</li>
+            <li>respect other users, and not photograph or film them without permission;</li>
+            <li>tell staff about any health condition or medication that could affect your safety.</li>
+          </ul>
+          <p>Please don&rsquo;t bring valuables. We are not responsible for belongings left at the facility.</p>
         </section>
 
-        <!-- 9 -->
         <section class="clause" id="t9">
-          <h3><span class="clause-num">9.</span> Cancelling or missing a booked session</h3>
-          <p>9.1 If you can no longer attend a booked session, please cancel it through the booking system as early as possible so someone else can use the slot.</p>
-          <p>9.2 If you cancel at least <span class="ph">[X hours]</span> before the session starts, your Session Credit is returned to you for use in the same Membership Month.</p>
-          <p>9.3 If you cancel later than that, or do not attend, <span class="ph">[CONSEQUENCE: e.g. the Session Credit is used]</span>.</p>
-          <aside class="review-note"><strong>Review note:</strong> The late-cancellation notice period and what happens to a credit on a late cancellation or no-show have not been agreed. Please decide. No penalty or fee has been included.</aside>
+          <h3><span class="clause-num">9.</span> If we end your membership</h3>
+          <p>We may suspend or end your membership for serious or repeated misconduct, such as abusive behaviour, misusing equipment, using an ice bath alone or giving false health information. If we do, no further payments are taken and the current month is not refunded.</p>
+          <p>If we end your membership for any other reason, we will refund any months you have paid for but not used.</p>
         </section>
 
-        <!-- 10 -->
         <section class="clause" id="t10">
-          <h3><span class="clause-num">10.</span> Authority to collect future payments (monthly option)</h3>
-          <p>10.1 If you choose the monthly option, then by ticking the box at checkout you <strong>expressly authorise us</strong> to:</p>
-          <ul>
-            <li>securely save your payment card details with our payment provider, Stripe, for future use; and</li>
-            <li>use that card to collect the remaining 11 monthly payments of £35, one on each Monthly Billing Date from the start of Membership Month 2 to the start of Membership Month 12, without asking you again each time.</li>
-          </ul>
-          <p>10.2 We do not see or store your full card number. Card details are held by Stripe.</p>
-          <p>10.3 We will email you to confirm your Commencement Date and the date your second payment will be taken before any further payment is collected.</p>
-          <p>10.4 We will only collect the amounts and on the dates described in section 4. If we ever needed to take a different amount or on a different date, we would ask for your agreement first.</p>
-          <p>10.5 You can ask us to update the card we use at any time by contacting us. Withdrawing this payment authority does not on its own end your membership or your commitment to pay; see section 12.</p>
-          <aside class="review-note"><strong>Review note (solicitor):</strong> Confirm the future-payment authority wording, including whether customers should be able to withdraw it and pay another way.</aside>
+          <h3><span class="clause-num">10.</span> Changes and closures</h3>
+          <p>We may make reasonable changes to opening hours, session times or equipment. If we have to close for more than 7 days in a row, we will extend your membership by the time we were closed.</p>
+          <p>We may update these terms, for example to reflect the law or our insurer&rsquo;s requirements. We will tell you at least 30 days before any change that affects you.</p>
         </section>
 
-        <!-- 11 -->
         <section class="clause" id="t11">
-          <h3><span class="clause-num">11.</span> Failed, overdue and disputed payments</h3>
-          <p>11.1 If a monthly payment fails, we will tell you by email. Our payment provider may retry the payment automatically over the following days.</p>
-          <p>11.2 Your bank may ask you to approve a payment (for example, through your banking app). If so, you will receive a secure link to complete it.</p>
-          <p>11.3 If a payment remains unpaid for <span class="ph">[X days]</span>, we may suspend your ability to book new sessions until the overdue amount is paid. Your membership period and Session Credit expiry dates are not extended during a suspension for non-payment.</p>
-          <p>11.4 Overdue amounts remain payable. We will try to resolve arrears with you directly before taking any other step. <span class="ph">[Any late-payment fee or debt-recovery step: none unless approved]</span></p>
-          <p>11.5 If you think a payment has been taken in error, please contact us first at <span class="ph">[CONTACT EMAIL]</span> so we can put it right quickly. This does not affect your right to raise a dispute with your card provider.</p>
-          <aside class="review-note"><strong>Review note:</strong> The arrears period before booking suspension, and whether any late fee or debt-recovery step applies, are not agreed. No fee is included.</aside>
+          <h3><span class="clause-num">11.</span> Your information</h3>
+          <p>We use your details to run your membership, take payments and manage bookings. Any health information you give us is kept securely, seen only by staff who need it, and used only to keep you safe. We keep a record of your acceptance of these terms and your signed Cold Bath Safety Notice, as our insurer requires.</p>
         </section>
 
-        <!-- 12 -->
         <section class="clause" id="t12">
-          <h3><span class="clause-num">12.</span> Ending your membership early</h3>
-          <p>12.1 Apart from your 14-day cancellation right (section 7) and the opening provisions (section 6), your membership is a fixed 12-month agreement.</p>
-          <p>12.2 We will consider a request to end or freeze your membership early in genuine circumstances, such as serious illness or injury that stops you using the Facility (supported by medical evidence), or moving to live more than <span class="ph">[X miles]</span> away. <span class="ph">[Notice period, freeze rules and any refund on early ending: to be agreed]</span></p>
-          <p>12.3 If a medical professional advises you not to use heat, cold or compression therapy, please tell us so we can discuss your options.</p>
-          <aside class="review-note"><strong>Review note (solicitor):</strong> Early-termination and freeze rules have not been agreed and need a decision. Courts and the CMA have found gym contracts with no early exit in hardship cases unfair, so a fair exit route is strongly recommended.</aside>
-        </section>
-
-        <!-- 13 -->
-        <section class="clause" id="t13">
-          <h3><span class="clause-num">13.</span> Facility rules and conduct</h3>
-          <p>13.1 To keep everyone safe and comfortable, you must:</p>
-          <ul>
-            <li>follow all instructions given by our staff, and all safety signs and notices at the Facility;</li>
-            <li>only use the saunas, cold baths and compression boots in the way you have been shown, and within any time and temperature guidance given by staff;</li>
-            <li>never use a cold bath while alone at the premises, and only when a trained member of staff is present (see Document 3);</li>
-            <li>shower before using the saunas and cold baths, and wear clean, appropriate swimwear or clothing;</li>
-            <li>bring and use your own towel, and sit or lie on a towel in the saunas;</li>
-            <li>not use the Facility if you are under the influence of alcohol or drugs;</li>
-            <li>tell staff straight away about any hazard you notice, such as a wet floor, damaged equipment or an unusual water temperature;</li>
-            <li>respect other users' privacy, space and comfort, and keep noise to a reasonable level;</li>
-            <li>not take photos or videos of other users without their permission;</li>
-            <li>arrive on time and leave promptly at the end of your session; and</li>
-            <li>tell us about any health condition, medication or other factor that could affect your safety (see Document 2).</li>
-          </ul>
-          <p>13.2 You are responsible for your own belongings. <span class="ph">[Locker arrangements]</span></p>
-          <aside class="review-note"><strong>Review note:</strong> Check these rules against how the Facility will actually run (swimwear, towels, lockers, phones). Add or remove rules as needed.</aside>
-        </section>
-
-        <!-- 14 -->
-        <section class="clause" id="t14">
-          <h3><span class="clause-num">14.</span> Suspension and termination by us</h3>
-          <p>14.1 We may suspend your access straight away while we look into a serious safety concern, or if you seriously or repeatedly break these terms. Examples include violent, abusive or threatening behaviour, deliberately misusing equipment, using the cold baths alone, being under the influence of alcohol or drugs, or knowingly giving us false health information.</p>
-          <p>14.2 After investigating, we may end your membership by telling you in writing with our reasons. If we end your membership for a serious breach, <span class="ph">[what happens to payments made / remaining payments: to be agreed]</span>.</p>
-          <p>14.3 If we end your membership for any other reason not caused by you, we will refund any amount you have paid for Membership Months you have not yet received, and take no further payments.</p>
-          <aside class="review-note"><strong>Review note (solicitor):</strong> The financial consequences of termination for serious breach have not been agreed. Please decide; no penalty has been included.</aside>
-        </section>
-
-        <!-- 15 -->
-        <section class="clause" id="t15">
-          <h3><span class="clause-num">15.</span> Changes to the facility and how we operate</h3>
-          <p>15.1 We may make reasonable changes to how the Facility runs, such as opening hours, session times, booking arrangements or the equipment available, for operational, safety, maintenance or legal reasons. We will give you reasonable notice of significant changes where we can.</p>
-          <p>15.2 We may need to close all or part of the Facility at short notice for safety, maintenance, staffing or other reasons outside our control. If the Facility, or the saunas and cold baths as a whole, is closed for more than <span class="ph">[X consecutive days]</span>, we will <span class="ph">[extend your membership / give a proportionate refund / issue replacement credits: to be agreed]</span>.</p>
-          <p>15.3 If a change significantly reduces what you receive under your membership, you may end your membership and we will refund any amount paid for Membership Months not yet received.</p>
-        </section>
-
-        <!-- 16 -->
-        <section class="clause" id="t16">
-          <h3><span class="clause-num">16.</span> Our responsibility to you</h3>
-          <p>16.1 We will provide our services with reasonable care and skill.</p>
-          <p>16.2 Nothing in these terms or the other documents on this page limits or excludes our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for anything else that cannot be limited or excluded by law.</p>
-          <p>16.3 Subject to 16.2, we are not responsible for loss or damage that was not reasonably foreseeable, or that was caused by your failure to follow these terms, staff instructions or safety notices.</p>
-          <aside class="review-note"><strong>Review note (solicitor):</strong> Liability wording needs a solicitor's review, together with Document 2.</aside>
-        </section>
-
-        <!-- 17 -->
-        <section class="clause" id="t17">
-          <h3><span class="clause-num">17.</span> Your personal information</h3>
-          <p>17.1 We use your personal information to provide your membership, take payments, manage bookings and keep you safe, as described in our privacy notice <span class="ph">[PRIVACY NOTICE LINK]</span>.</p>
-          <p>17.2 Any health information you give us is treated as special category data. We use it only to assess whether you can take part safely, keep it secure with access limited to staff who need it, and keep it for no longer than <span class="ph">[RETENTION PERIOD]</span>. We do not store health information with our payment provider.</p>
-          <p>17.3 We keep a record of your acceptance of these terms (including the version accepted and when), and your signed Cold Bath Safety Notice, because our insurer requires copies to be kept for inspection.</p>
-          <aside class="review-note"><strong>Review note (solicitor / data protection):</strong> A privacy notice covering health data, its lawful basis and condition, the retention period and insurer access to records is needed before launch. Check whether ICO registration is in place.</aside>
-        </section>
-
-        <!-- 18 -->
-        <section class="clause" id="t18">
-          <h3><span class="clause-num">18.</span> Changes to these terms</h3>
-          <p>18.1 Every version of these documents has a version number and effective date, shown at the top of this page. The version you accepted at checkout continues to apply to your membership.</p>
-          <p>18.2 We may update these terms to reflect changes in the law, safety requirements or our insurer's conditions. We will tell you about any change that affects you at least <span class="ph">[X days]</span> before it takes effect. If a change is significantly to your disadvantage, you may end your membership and receive a refund for any Membership Months you have paid for but not yet received.</p>
-          <p>18.3 We keep a copy of every previous version so we can always show which terms applied when you joined.</p>
-        </section>
-
-        <!-- 19 -->
-        <section class="clause" id="t19">
-          <h3><span class="clause-num">19.</span> Complaints and the law that applies</h3>
-          <p>19.1 If you are unhappy with anything, please contact us first at <span class="ph">[CONTACT EMAIL]</span> or on <a href="tel:+441229877892">01229 877892</a>. We will respond within <span class="ph">[X working days]</span>.</p>
-          <p>19.2 These terms are governed by the law of England and Wales. You can bring legal proceedings in the courts of England and Wales. If you live in Scotland or Northern Ireland, you can also bring proceedings in your local courts.</p>
+          <h3><span class="clause-num">12.</span> Our responsibility</h3>
+          <p>We will run TP Fire &amp; Ice with reasonable care and skill. Nothing in these terms limits our liability for death or personal injury caused by our negligence, or anything else the law does not allow us to limit. Nothing in these terms affects your legal rights.</p>
+          <p>These terms are governed by the law of England and Wales.</p>
         </section>
         </details>
       </div>
@@ -481,7 +309,6 @@
         <details class="terms-fold">
           <summary><h2 id="doc2-title">Participant Waiver &amp; Health Declaration</h2><span class="fold-hint">Read</span></summary>
         <header class="doc-head">
-          <p class="doc-ref">TPFI-TERMS v1.0 <span class="ph">[DRAFT]</span> · Applies to every TP Fire &amp; Ice session</p>
           <div class="doc-actions no-print">
             <button class="btn btn-outline" type="button" data-print="participant-waiver">Print this document</button>
           </div>
@@ -546,7 +373,7 @@
 
         <section class="clause">
           <h3><span class="clause-num">5.</span> Health information</h3>
-          <p>Before your first session, we will ask you to complete a short health questionnaire in person or through a secure form, <strong>not</strong> at the online checkout. We use this information only to help keep you safe, and handle it as described in section 17 of Document 1.</p>
+          <p>Before your first session, we will ask you to complete a short health questionnaire in person or through a secure form, <strong>not</strong> at the online checkout. We use this information only to help keep you safe, and handle it as described in section 11 of the Membership Terms.</p>
           <p>You must not knowingly hide or give false information about any health condition, medication or other factor that could affect whether you can take part safely.</p>
         </section>
 
@@ -595,7 +422,6 @@
         <details class="terms-fold">
           <summary><h2 id="doc3-title">Cold Bath Safety Notice</h2><span class="fold-hint">Read</span></summary>
         <header class="doc-head">
-          <p class="doc-ref">TPFI-TERMS v1.0 <span class="ph">[DRAFT]</span> · Reflects insurer condition NBS913: Cold Bath Therapy Condition</p>
           <div class="doc-actions no-print">
             <button class="btn btn-outline" type="button" data-print="cold-bath-notice" data-print-mode="sign">Print for signature</button>
             <button class="btn btn-outline" type="button" data-print="cold-bath-notice" data-print-mode="display">Print for display</button>
@@ -685,11 +511,9 @@
       </div>
     </article>
 
-    <!-- ===== CONTACT ===== -->
-    <section class="terms-contact" id="contact">
+    <section class="terms-contact">
       <div class="container">
-        <p><strong>Questions?</strong> Call us on <a href="tel:+441229877892">01229 877892</a> or ask at the gym.</p>
-        <p class="small">Version TPFI-TERMS v1.0 <span class="ph">[DRAFT]</span> &middot; Last updated 27 November 2026</p>
+        <p class="small">Version 1.0 &middot; Last updated 27 November 2026</p>
       </div>
     </section>
 
