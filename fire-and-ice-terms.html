@@ -98,7 +98,7 @@
 .fi-fire { color: var(--fire); }
 .fi-ice { color: var(--ice); }
 .fi-title { font-size: clamp(2.6rem, 9vw, 4.6rem); margin-bottom: 18px; }
-.fi-lead { color: var(--white); font-size: 1.12rem; max-width: 60ch; margin-bottom: 16px; }
+.terms-intro .fi-lead { color: var(--white); font-size: 1.12rem; max-width: 60ch; margin-bottom: 16px; }
 .terms-intro { position: relative; }
 .terms-intro::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
@@ -126,6 +126,28 @@
 #participant-waiver .terms-fold > summary { border-left-color: var(--fire); }
 .terms-contact { padding: 24px 0 40px; }
 @media print { .terms-intro::after { display: none; } }
+
+/* Black Friday banner */
+.bf-banner {
+  margin-top: var(--header-h);
+  background: linear-gradient(90deg, var(--fire), #7a3a8c 50%, var(--ice));
+  color: var(--white);
+  text-align: center;
+  padding: 18px 0;
+}
+.bf-banner .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 18px; }
+.bf-tag {
+  font-family: var(--font-head); font-weight: 900; text-transform: uppercase;
+  letter-spacing: 0.06em; font-size: clamp(1.4rem, 4.5vw, 2.2rem); line-height: 1.1;
+}
+.bf-text {
+  font-family: var(--font-head); font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.08em; font-size: clamp(1rem, 3vw, 1.35rem);
+  background: var(--black); padding: 6px 14px; border-radius: 4px;
+}
+.bf-text strong { color: var(--yellow); }
+.bf-banner + .terms-intro { padding-top: 48px; }
+@media print { .bf-banner { display: none; } }
   </style>
 </head>
 <body data-doc-status="final">
@@ -156,6 +178,14 @@
   </header>
 
   <main id="main" class="terms-page">
+
+    <!-- ===== BLACK FRIDAY BANNER ===== -->
+    <div class="bf-banner" role="note">
+      <div class="container">
+        <span class="bf-tag">Black Friday offer</span>
+        <span class="bf-text">Only <strong>50</strong> founding spaces</span>
+      </div>
+    </div>
 
     <!-- ===== INTRO ===== -->
     <section class="page-intro terms-intro">
