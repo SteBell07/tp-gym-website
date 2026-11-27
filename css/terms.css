@@ -1,0 +1,584 @@
+/* =========================================================
+   TP Fire & Ice terms page (fire-and-ice-terms.html)
+   Builds on styles.css. Only used by the terms page.
+   ========================================================= */
+
+.terms-page {
+  --doc-max: 860px;
+  --line: #333;
+}
+
+/* ---------- Draft status ---------- */
+
+.draft-banner {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--header-h);
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  padding: 12px 0;
+}
+.draft-banner + .terms-intro { padding-top: 48px; }
+
+.review-note {
+  margin: 18px 0;
+  padding: 12px 16px;
+  border: 1px dashed var(--yellow);
+  border-radius: 4px;
+  background: rgba(255, 210, 0, 0.07);
+  color: var(--text);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.review-note strong { color: var(--yellow); }
+
+body[data-doc-status="final"] .draft-banner,
+body[data-doc-status="final"] .review-note { display: none; }
+
+/* Placeholders still to be filled in */
+.ph {
+  color: var(--yellow);
+  font-weight: 600;
+  background: rgba(255, 210, 0, 0.1);
+  border-radius: 2px;
+  padding: 0 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ---------- Intro ---------- */
+
+.terms-intro h1 {
+  font-size: clamp(2rem, 6.5vw, 3.4rem);
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.terms-intro p { max-width: 62ch; }
+
+.doc-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 28px 0 0;
+  max-width: 720px;
+  background: var(--charcoal-2);
+  border: 1px solid var(--charcoal-2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.doc-meta div {
+  background: var(--charcoal);
+  padding: 12px 14px;
+}
+.doc-meta dt {
+  font-family: var(--font-head);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.doc-meta dd {
+  margin: 2px 0 0;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ---------- Contents ---------- */
+
+.terms-contents { padding: 16px 0 40px; }
+.contents-title,
+.glance-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 16px;
+}
+.doc-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.doc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  padding: 20px 22px;
+  background: var(--charcoal);
+  border-radius: 6px;
+  border-top: 3px solid var(--yellow);
+  color: var(--text);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.doc-card:hover {
+  background: var(--charcoal-2);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.doc-num {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.doc-name {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--white);
+}
+.doc-desc {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.contents-extra {
+  margin: 18px 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* ---------- At a glance ---------- */
+
+.terms-glance {
+  padding: 48px 0;
+  background: var(--charcoal);
+  border-top: 1px solid var(--charcoal-2);
+  border-bottom: 1px solid var(--charcoal-2);
+}
+.glance-grid {
+  display: grid;
+  gap: 16px;
+}
+.glance-card {
+  background: var(--black);
+  border: 1px solid var(--charcoal-2);
+  border-radius: 6px;
+  padding: 24px 22px;
+}
+.glance-card .usp-num { margin-bottom: 6px; }
+.glance-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.glance-price {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--yellow);
+  margin: 0 0 14px;
+}
+.glance-price span {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0;
+}
+.glance-card ul { margin: 0; padding-left: 1.15em; }
+.glance-card li { margin-bottom: 8px; }
+.glance-card li:last-child { margin-bottom: 0; }
+.glance-note {
+  margin: 20px 0 0;
+  max-width: 70ch;
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* ---------- Documents ---------- */
+
+.terms-doc {
+  padding: 56px 0;
+  border-top: 1px solid var(--charcoal-2);
+  scroll-margin-top: var(--header-h);
+}
+.terms-doc.doc-alt { background: #121212; }
+.terms-doc > .container { max-width: calc(var(--doc-max) + 2 * var(--gutter)); }
+
+[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
+
+.doc-head { margin-bottom: 28px; }
+.doc-head h2 {
+  font-size: clamp(1.8rem, 5.5vw, 2.6rem);
+  margin: 6px 0 8px;
+}
+.doc-ref {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.btn-outline {
+  background: transparent;
+  color: var(--yellow);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 9px 14px;
+}
+.btn-outline:hover { background: var(--yellow); color: var(--black); }
+
+.doc-toc {
+  margin: 0 0 36px;
+  padding: 18px 22px;
+  background: var(--charcoal);
+  border-radius: 6px;
+}
+.doc-toc ol {
+  margin: 0;
+  padding-left: 1.6em;
+  columns: 1;
+  font-size: 0.93rem;
+}
+.doc-toc li { margin: 3px 0; break-inside: avoid; }
+
+.clause {
+  margin: 0 0 32px;
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+.clause h3 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+.clause-num { color: var(--yellow); margin-right: 4px; }
+.clause p { margin: 0 0 12px; }
+.clause ul,
+.clause ol { margin: 0 0 14px; padding-left: 1.3em; }
+.clause li { margin-bottom: 6px; }
+.clause strong { color: var(--white); }
+
+.small { font-size: 0.85rem; color: var(--muted); }
+
+.defs {
+  display: grid;
+  gap: 4px 20px;
+  margin: 0 0 12px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--yellow);
+  background: var(--charcoal);
+  border-radius: 0 6px 6px 0;
+}
+.defs dt {
+  font-weight: 600;
+  color: var(--white);
+}
+.defs dd { margin: 0 0 10px; color: var(--text); }
+
+/* Key callouts */
+.key-box,
+.example-box {
+  margin: 0 0 20px;
+  padding: 18px 20px;
+  border-radius: 6px;
+}
+.key-box {
+  background: var(--yellow);
+  color: var(--black);
+}
+.key-box strong { color: var(--black); }
+.key-box p:last-child { margin-bottom: 0; }
+.example-box {
+  background: var(--charcoal);
+  border: 1px solid var(--charcoal-2);
+}
+.example-box ul { margin-bottom: 10px; }
+.example-box .small { margin: 0; }
+.key-title {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 8px !important;
+}
+
+/* Tables */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 0 18px;
+  border: 1px solid var(--charcoal-2);
+  border-radius: 6px;
+}
+.terms-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  min-width: 480px;
+}
+.terms-table th,
+.terms-table td {
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--charcoal-2);
+}
+.terms-table thead th {
+  background: var(--charcoal-2);
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.terms-table tbody th { color: var(--white); font-weight: 600; }
+.terms-table tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.025); }
+.terms-table tfoot th,
+.terms-table tfoot td {
+  background: var(--yellow);
+  color: var(--black);
+  border-bottom: 0;
+}
+.terms-table tfoot strong { color: var(--black); }
+.schedule-table tbody tr:first-child td { color: var(--white); font-weight: 600; }
+
+/* Risks */
+.risk-grid {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+.risk {
+  padding: 14px 16px;
+  background: var(--charcoal);
+  border-radius: 6px;
+  border-left: 3px solid var(--yellow);
+}
+.risk h4 {
+  margin: 0 0 4px;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  color: var(--white);
+}
+.risk p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+.strong-note {
+  padding: 14px 16px;
+  border: 1px solid var(--yellow);
+  border-radius: 6px;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.tick-list { list-style: none; padding-left: 0 !important; }
+.tick-list li { position: relative; padding-left: 22px; }
+.tick-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 9px;
+  height: 9px;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+
+.declare-list li { padding-left: 4px; }
+
+/* ---------- Cold bath notice ---------- */
+
+.notice {
+  border: 2px solid var(--yellow);
+  border-radius: 8px;
+  padding: 22px 18px 6px;
+  background: var(--black);
+}
+.notice-banner {
+  margin: 0 0 24px;
+  padding: 16px 18px;
+  background: var(--yellow);
+  color: var(--black);
+  border-radius: 4px;
+}
+.notice-banner p { margin: 0; }
+.notice-banner strong { color: var(--black); }
+.notice-kicker {
+  font-family: var(--font-head);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px !important;
+}
+.exclusions {
+  list-style: none;
+  padding-left: 0 !important;
+  font-size: 1.02rem;
+}
+.exclusions li {
+  display: flex;
+  gap: 10px;
+  padding: 9px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--charcoal-2);
+  color: var(--white);
+}
+.ex-letter {
+  flex: none;
+  width: 1.6em;
+  font-weight: 700;
+  color: var(--yellow);
+}
+
+/* Signature blocks */
+.signature-block {
+  margin: 20px 0 22px;
+  padding: 18px;
+  border: 1px solid var(--charcoal-2);
+  border-radius: 6px;
+}
+.sig-intro {
+  margin: 0 0 10px !important;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sig-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 4px 12px;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+.sig-row:last-child { margin-bottom: 0; }
+.sig-row > span:first-child {
+  flex: 0 0 auto;
+  min-width: 10em;
+  color: var(--muted);
+}
+.sig-line {
+  flex: 1 1 180px;
+  min-height: 1.6em;
+  border-bottom: 1px solid var(--muted);
+}
+.sig-fixed { color: var(--white); font-weight: 600; }
+.staff-block { background: var(--charcoal); }
+
+/* Doc 2's signature block only appears on the printed copy */
+.print-only-sign { display: none; }
+
+/* ---------- Acceptance steps ---------- */
+
+.steps { display: grid; gap: 14px; }
+.step {
+  position: relative;
+  padding: 22px 20px 18px;
+  background: var(--charcoal);
+  border-radius: 6px;
+  border-top: 3px solid var(--yellow);
+}
+.step h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.step p { margin: 0 0 10px; }
+.step p:last-child { margin-bottom: 0; }
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: var(--font-head);
+  font-weight: 900;
+}
+
+.contact-defs { grid-template-columns: 1fr; }
+.back-top { margin: 24px 0 0; }
+
+/* ---------- Tablet and up ---------- */
+
+@media (min-width: 720px) {
+  .doc-meta { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .doc-cards { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .glance-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .terms-doc { padding: 80px 0; }
+  .doc-toc ol { columns: 2; column-gap: 40px; }
+  .risk-grid { grid-template-columns: 1fr 1fr; }
+  .notice { padding: 32px 32px 10px; }
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .defs { grid-template-columns: max-content 1fr; }
+  .defs dd { margin-bottom: 6px; }
+  .contact-defs { grid-template-columns: max-content 1fr; }
+}
+
+/* ---------- Print ----------
+   "Print" buttons set data-print-target / data-print-mode on <body>
+   (js/terms.js) so only that document is printed. Printing the whole
+   page with the browser's own print command prints all three. */
+
+@media print {
+  @page { margin: 16mm 14mm; }
+
+  body,
+  .terms-page,
+  .terms-doc,
+  .terms-doc.doc-alt,
+  .notice,
+  .doc-toc,
+  .defs,
+  .risk,
+  .step,
+  .example-box,
+  .glance-card,
+  .terms-glance,
+  .staff-block,
+  .doc-card {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  body { font-size: 11pt; line-height: 1.45; }
+  h1, h2, h3, h4, .doc-name, .clause strong, .exclusions li, .sig-fixed,
+  .terms-table tbody th, .glance-note, .doc-meta dd { color: #000 !important; }
+  a { color: #000 !important; text-decoration: none; }
+  .clause-num, .ex-letter, .doc-num, .eyebrow, .usp-num { color: #000 !important; }
+
+  .site-header, .site-footer, .skip-link, .no-print, .doc-toc, .terms-contents,
+  .back-top { display: none !important; }
+
+  .draft-banner { margin-top: 0; border: 2px solid #000; background: #fff; }
+  .review-note { border-color: #000; background: #fff; }
+  .review-note strong { color: #000; }
+  .ph { color: #000; background: none; border-bottom: 1px dotted #000; }
+
+  .terms-doc { padding: 0 0 12mm; border: 0; }
+  .terms-doc > .container { max-width: none; padding: 0; }
+  .page-intro { padding: 0 0 8mm; }
+
+  .notice { border: 2px solid #000; }
+  .notice-banner, .key-box { background: #fff !important; border: 2px solid #000; }
+  .notice-banner, .notice-banner strong, .key-box, .key-box strong { color: #000 !important; }
+  .terms-table thead th, .terms-table tfoot th, .terms-table tfoot td { background: #eee !important; color: #000 !important; }
+  .table-wrap { overflow: visible; border-color: #999; }
+  .terms-table { min-width: 0; }
+  .sig-line { border-bottom-color: #000; min-height: 2.2em; }
+  .sig-row > span:first-child { color: #000; }
+  .clause, .signature-block, .risk, .exclusions li { break-inside: avoid; }
+  .print-only-sign { display: block; }
+
+  /* Printing a single document */
+  body[data-print-target] main > *:not(.terms-doc),
+  body[data-print-target] .terms-doc { display: none !important; }
+  body[data-print-target="participant-waiver"] #participant-waiver,
+  body[data-print-target="cold-bath-notice"] #cold-bath-notice { display: block !important; }
+
+  /* Display copy (reception / beside the cold baths): no signature section,
+     larger text so it reads from a distance */
+  body[data-print-mode="display"] .sign-section,
+  body[data-print-mode="display"] .review-note { display: none !important; }
+  body[data-print-mode="display"] #cold-bath-notice { font-size: 13pt; }
+  body[data-print-mode="display"] #cold-bath-notice h2 { font-size: 26pt; }
+}

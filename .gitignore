@@ -3,3 +3,6 @@ images/_duplicates/
 images/originals/
 scripts/.bin/
 .claude/
+
+# Internal business notes (not for publishing)
+internal/
